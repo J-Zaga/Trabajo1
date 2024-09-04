@@ -5,7 +5,7 @@ const datos = [2, 10, "a", 4, "b", 6, "d", true, "e", 9, 1, "z", 12, "r", "c", f
 const filtrar = (datos, condicion) => {
 
     if (typeof (condicion) === typeof ("string") || typeof (condicion) === typeof (1) || typeof (condicion) === typeof (true)) {
-        const filtrados = datos.filter((x) => typeof (x) == typeof (condicion))
+        const filtrados = datos.filter((x) => typeof (x) === typeof (condicion))
         filtrados.sort()
         filtrados.sort((a, b) => a - b)
         const unicos = [...new Set(filtrados)]
