@@ -9,13 +9,17 @@ const filtrar = (datos, condicion) => {
         filtrados.sort()
         filtrados.sort((a, b) => a - b)
         const unicos = [...new Set(filtrados)]
-        const datosParaEscribir = JSON.stringify(unicos);
-        fs.writeFileSync("doc.txt", datosParaEscribir)
-        const updateFile = fs.readFileSync("doc.txt", "utf-8")
-        return updateFile
+        if (unicos.length > 0) {
+            const datosParaEscribir = JSON.stringify(unicos);
+            fs.writeFileSync("doc.txt", datosParaEscribir)
+            const updateFile = fs.readFileSync("doc.txt", "utf-8")
+            return updateFile
+        }else {
+            return "El nuevo array no tiene datos"
+        }
     } else {
         return "La condicion no es valida"
     }
 }
 
-console.log(filtrar(datos, 2))
+console.log(filtrar(datos,"a"))
