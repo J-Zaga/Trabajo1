@@ -1,0 +1,14 @@
+{
+  "name": "tp1",
+  "version": "1.0.0",
+  "description": "Trabajo Practico 1",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "watch": "node --watch index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Juan Zagarese",
+  "license": "ISC"
+}
