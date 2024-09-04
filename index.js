@@ -9,7 +9,7 @@ const filtrar = (datos, condicion) => {
         filtrados.sort()
         filtrados.sort((a, b) => a - b)
         const unicos = [...new Set(filtrados)]
-        const datosParaEscribir = JSON.stringify(unicos, null, 2);
+        const datosParaEscribir = JSON.stringify(unicos);
         fs.writeFileSync("doc.txt", datosParaEscribir)
         const updateFile = fs.readFileSync("doc.txt", "utf-8")
         return updateFile
@@ -18,4 +18,4 @@ const filtrar = (datos, condicion) => {
     }
 }
 
-console.log(filtrar(datos, "s"))
+console.log(filtrar(datos, 2))
