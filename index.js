@@ -10,13 +10,12 @@ const filtrar = (datos, condicion) => {
         filtrados.sort((a, b) => a - b)
         const unicos = [...new Set(filtrados)]
         const datosParaEscribir = JSON.stringify(unicos, null, 2);
-        const writeFile = fs.writeFileSync("doc.txt", datosParaEscribir)
+        fs.writeFileSync("doc.txt", datosParaEscribir)
         const updateFile = fs.readFileSync("doc.txt", "utf-8")
         return updateFile
     } else {
         return "La condicion no es valida"
     }
-
 }
 
-console.log(filtrar(datos, 2))
+console.log(filtrar(datos, "s"))
